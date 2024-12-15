@@ -1,0 +1,46 @@
+.menu-bar {
+  padding: 10px;
+  background-color: #17a2b8;
+  opacity: 0.9;
+  display: flex;
+  justify-content: space-between; /* Space between left and right menus */
+  align-items: center; /* Vertically center items */
+}
+
+.menu-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-bar ul li {
+  margin-right: 20px;
+}
+
+.menu-bar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 5px 10px; /* Add padding for spacing */
+  border-radius: 4px; /* Rounded corners */
+  transition: border 0.3s, background-color 0.3s; /* Smooth transition */
+}
+
+/* Style for active menu item - only left and right borders */
+.menu-bar ul li a.active,
+.menu-bar ul li a.active:hover {
+  border-left: 2px solid #fff; /* White left border */
+  border-right: 2px solid #fff; /* White right border */
+}
+
+/* Style for hovered menu item - only left and right borders */
+.menu-bar ul li a:hover {
+  border-left: 2px solid #fff; /* White left border */
+  border-right: 2px solid #fff; /* White right border */
+}
+
+/* Style for the right-aligned menu */
+.menu-bar .right-menu {
+  margin-left: auto; /* This will push the right menu to the far right */
+}

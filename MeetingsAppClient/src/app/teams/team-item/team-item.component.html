@@ -1,0 +1,12 @@
+<div class="team-card card shadow-sm mb-3 p-3">
+    <div class="card-body">
+      <h5 class="card-title">{{ team.name }}</h5>
+      <h6 class="card-subtitle text-muted mb-2">{{ team.shortName }}</h6>
+      <p class="card-text mb-2">{{ team.description }}</p>
+      <p class="card-text">
+        <strong>Members:</strong> {{ team.members.join(', ') }}
+      </p>
+      <button class="btn btn-danger">Excuse yourself</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,55 @@
+/* Add styling for time slots */
+.time-slot {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  height: 50px;
+  padding: 0 10px;
+  }
+  
+  .time-label {
+    color: gray;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  /* calendar.component.scss */
+.meetings-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.meeting-box {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+  transition: transform 0.2s;
+}
+
+.meeting-box:hover {
+  transform: scale(1.05);
+}
+
+.meeting-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.meeting-attendees {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.meeting-details {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.text-muted {
+  color: #999;
+}

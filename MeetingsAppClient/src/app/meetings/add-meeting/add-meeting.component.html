@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <h5 class="mb-4">Add a New Meeting</h5>
+  <hr />
+  <form [formGroup]="addMeetingForm" (ngSubmit)="submitMeeting()">
+    
+    <!-- Meeting Name Field -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Meeting Name</label>
+      <input type="text" id="name" class="form-control" formControlName="name" placeholder="Enter meeting name" />
+    </div>
+
+    <!-- Date Field -->
+    <div class="mb-3">
+      <label for="date" class="form-label">Date</label>
+      <input type="date" id="date" class="form-control" formControlName="date" />
+    </div>
+
+    <!-- Start Time -->
+    <div class="mb-3">
+      <label class="form-label">Start Time (hh:mm)</label>
+      <div class="d-flex align-items-center">
+        <select class="form-select w-auto" formControlName="startTime.hours">
+          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+        </select>
+        <span class="mx-2">:</span>
+        <select class="form-select w-auto" formControlName="startTime.minutes">
+          <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- End Time -->
+    <div class="mb-3">
+      <label class="form-label">End Time (hh:mm)</label>
+      <div class="d-flex align-items-center">
+        <select class="form-select w-auto" formControlName="endTime.hours">
+          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
+        </select>
+        <span class="mx-2">:</span>
+        <select class="form-select w-auto" formControlName="endTime.minutes">
+          <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" class="form-control" formControlName="description" placeholder="What is the agenda of the meeting?"></textarea>
+    </div>
+
+    <!-- Attendees -->
+    <div class="mb-3">
+      <label for="attendees" class="form-label">Email IDs or Team Short Names</label>
+      <input type="text" id="attendees" class="form-control" formControlName="attendees" placeholder="e.g., john@example.com, @team-name" />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="addMeetingForm.invalid">Add Meeting</button>
+
+  </form>
+</div>

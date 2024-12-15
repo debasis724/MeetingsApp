@@ -1,0 +1,73 @@
+<div class="add-team-form container border p-4 rounded shadow-sm bg-white">
+  <h5 class="mb-3">Add New Team</h5>
+
+  <!-- Team Name -->
+  <div class="form-group mb-3">
+    <label for="teamName">Team Name</label>
+    <input
+      type="text"
+      id="teamName"
+      class="form-control"
+      placeholder="Enter team name"
+      [(ngModel)]="team.name"
+    />
+  </div>
+
+  <!-- Team Short Name -->
+  <div class="form-group mb-3">
+    <label for="teamShortName">Team Short Name</label>
+    <input
+      type="text"
+      id="teamShortName"
+      class="form-control"
+      placeholder="Enter team short name"
+      [(ngModel)]="team.shortName"
+    />
+  </div>
+
+  <!-- Team Description -->
+  <div class="form-group mb-4">
+    <label for="teamDescription">Description</label>
+    <textarea
+      id="teamDescription"
+      class="form-control"
+      rows="3"
+      placeholder="Provide a description for the team"
+      [(ngModel)]="team.description"
+    ></textarea>
+  </div>
+
+  <!-- Add Team Members -->
+  <div class="form-group mb-3">
+    <label for="newMemberEmail">Add Team Members</label>
+    <div class="d-flex">
+      <input
+        type="email"
+        id="newMemberEmail"
+        class="form-control"
+        placeholder="Enter member email"
+        [(ngModel)]="newMemberEmail"
+        (keyup.enter)="addMember()"
+      />
+      <button class="btn btn-success ms-2" (click)="addMember()">Add</button>
+    </div>
+    <small class="text-muted">Enter a member email and click "Add" to add them to the team.</small>
+  </div>
+
+  <!-- Display Members List -->
+  <div class="form-group mb-4">
+    <h6>Team Members:</h6>
+    <ul>
+      <li *ngFor="let member of team.members; let i = index" class="d-flex justify-content-between align-items-center">
+        {{ member }}
+        <button class="btn btn-danger btn-sm" (click)="removeMember(i)">Remove</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Submit and Cancel Buttons -->
+  <div class="d-flex justify-content-end gap-2">
+    <button class="btn btn-primary" (click)="addTeam()">Add</button>
+    <button class="btn btn-secondary" (click)="cancel.emit()">Cancel</button>
+  </div>
+</div>

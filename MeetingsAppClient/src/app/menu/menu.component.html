@@ -1,0 +1,26 @@
+<div class="container">
+  <nav class="menu-bar text-white p-3 rounded">
+    <!-- Left-aligned menu items -->
+    <ul class="left-menu">
+      <li><a routerLink="/calendar" routerLinkActive="active">Calendar</a></li>
+      <li><a routerLink="/meetings" routerLinkActive="active">Meetings</a></li>
+      <li><a routerLink="/teams" routerLinkActive="active">Teams</a></li>
+    </ul>
+
+    <!-- Right-aligned menu items -->
+    <ul class="right-menu ms-auto">
+      <li *ngIf="!isLoggedIn()">
+        <a routerLink="/register" routerLinkActive="active">Register</a>
+      </li>
+      <li *ngIf="!isLoggedIn()">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li *ngIf="isLoggedIn()">
+        <span>Hello, {{ userEmail }}</span> <!-- Display the user's email -->
+      </li>
+      <li *ngIf="isLoggedIn()">
+        <a (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</div>

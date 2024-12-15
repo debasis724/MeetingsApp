@@ -1,0 +1,104 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Meetings</h2>
+  <hr />
+  
+  <!-- Navigation Tabs -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a 
+        class="nav-link" 
+        [class.active]="currentTab === 'filter'" 
+        (click)="currentTab = 'filter'">
+        Filter / Search Meetings
+      </a>
+    </li>
+    <li class="nav-item">
+      <a 
+        class="nav-link" 
+        [class.active]="currentTab === 'add'" 
+        (click)="currentTab = 'add'">
+        Add a Meeting
+      </a>
+    </li>
+  </ul>
+
+  <!-- Dynamic Content Based on Selected Tab -->
+  <div class="mt-3">
+    <ng-container *ngIf="currentTab === 'filter'">
+      <!-- Filter/Search Meetings Content -->
+      <div class="bg-info text-white p-3 rounded">
+        <h5>Search for Meetings</h5>
+        <form>
+          <div class="mb-3">
+            <label for="dateFilter" class="form-label">Filter By Date</label>
+            <select
+              id="dateFilter"
+              class="form-control"
+              [(ngModel)]="selectedDate"
+              name="dateFilter"
+              (change)="filterMeetings()">
+              <option value="all">All</option>
+              <option value="past">Past</option>
+              <option value="today">Today</option>
+              <option value="upcoming">Upcoming</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="searchInput" class="form-label">Search for</label>
+            <input
+              type="text"
+              id="searchInput"
+              class="form-control"
+              placeholder="Search using words which describe the meeting"
+              [(ngModel)]="searchQuery"
+              name="searchInput"
+              (keyup)="filterMeetings()" />
+          </div>
+        </form>
+      </div>
+
+      <!-- Search Results -->
+      <div class="mt-4">
+        <h5>Meetings Matching Search Criteria</h5>
+        <div *ngIf="filteredMeetings.length === 0" class="text-muted">
+          No meetings found.
+        </div>
+        <div
+          *ngFor="let meeting of filteredMeetings"
+          class="border p-3 rounded mb-3">
+          <h6>
+            {{ meeting.date | date: 'fullDate' }}
+            {{ meeting.startTime.hours | number: '2.0' }}:
+            {{ meeting.startTime.minutes | number: '2.0' }} - 
+            {{ meeting.endTime.hours | number: '2.0' }}:
+            {{ meeting.endTime.minutes | number: '2.0' }}
+          </h6>
+          <p class="mb-2"><strong>{{ meeting.name }}</strong></p>
+          <p>{{ meeting.description }}</p>
+          <button class="btn btn-danger btn-sm mb-2" (click)="excuseYourself(meeting)">
+            Excuse yourself
+          </button>
+          <p>Attendees: {{ getAttendeeEmails(meeting.attendees) }}</p>
+
+          <!-- Add New Attendee Section -->
+          <div class="mb-3">
+            <label for="attendeeSelect" class="form-label">Add Attendee</label>
+            <div class="d-flex">
+              <select id="attendeeSelect" class="form-select w-auto" [(ngModel)]="selectedEmail">
+                <option value="" disabled selected>Select Member</option>
+                <option *ngFor="let email of exampleEmails" [value]="email">{{ email }}</option>
+              </select>
+              <button class="btn btn-success btn-sm ms-2" (click)="addAttendee(meeting)">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-container>
+
+    <ng-container *ngIf="currentTab === 'add'">
+      <!-- Add Meeting Component -->
+      <app-add-meeting (meetingAdded)="onMeetingAdded($event)"></app-add-meeting>
+    </ng-container>
+  </div>
+</div>
