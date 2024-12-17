@@ -11,5 +11,6 @@ public class MeetingDto
     public DateTime Date { get; set; }
     public TimeOnly StartTime { get; set; }
     public TimeOnly EndTime { get; set; }
-    public ICollection<Attendee> Attendees { get; set; }
+    public ICollection<AttendeeDto> Attendees { get; set; }
 }
+

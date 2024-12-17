@@ -12,6 +12,8 @@ using Microsoft.OpenApi.Models;
 
 using System.Text;
 
+using AutoMapper;
+
 using Meetings_App_Server.Data;
 
 using System.Text.Json.Serialization;
@@ -19,6 +21,7 @@ using System.Text.Json.Serialization;
 using System.Text.Json;
 
 using Meetings_App_Server.CustomConverter;
+using Meetings_App_Server.Mappings;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -187,12 +190,14 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins",
         policy =>
         {
-            //policy.WithOrigins(new string[] { "http://localhost:4200" }) // Replace with your allowed origin(s)
-              policy.AllowAnyOrigin()
+            policy.WithOrigins(new string[] { "http://localhost:4200" }) // Replace with your allowed origin(s)
+              //policy.AllowAnyOrigin()
                   .AllowAnyHeader()
                   .AllowAnyMethod();
         });
 });
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
 var app = builder.Build();
 

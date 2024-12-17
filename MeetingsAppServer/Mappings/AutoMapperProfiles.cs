@@ -8,6 +8,7 @@ namespace Meetings_App_Server.Mappings
         public AutoMapperProfiles() 
         {
             CreateMap<Meeting, MeetingDto>().ReverseMap();
+            CreateMap<Attendee, AttendeeDto>().ReverseMap();
         }
     }
 }

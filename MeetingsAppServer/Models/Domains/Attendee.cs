@@ -9,3 +9,9 @@ public class Attendee
     public string UserId { get; set; }  // Foreign key to ApplicationUser
     public IdentityUser User { get; set; } // Navigation property to User
 }
+public class AttendeeDto
+{
+    public int MeetingId { get; set; }  // Foreign key to Meeting
+    
+    public string UserId { get; set; }  // Foreign key to ApplicationUser
+}

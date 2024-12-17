@@ -1,12 +1,14 @@
 ﻿using Meetings_App_Server.Data;
-
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Meetings_App_Server.Models;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Identity;
 using Meetings_App_Server.Models.DTO;
 using Meetings_App_Server.Models.Domains;
+using Microsoft.AspNetCore.Identity;
+using AutoMapper;
 
 namespace Meetings_App_Server.Controllers;
 
@@ -23,12 +25,16 @@ public class MeetingsController : ControllerBase
 
 
     private readonly ApplicationDbContext _context;
+    private readonly UserManager<IdentityUser> _userManager;
+    private readonly IMapper _mapper;
 
-    public MeetingsController(ApplicationDbContext context)
+    public MeetingsController(ApplicationDbContext context, UserManager<IdentityUser> userManager, IMapper mapper)
 
     {
 
         _context = context;
+        _userManager = userManager;
+        _mapper = mapper;
 
     }
 
@@ -40,7 +46,11 @@ public class MeetingsController : ControllerBase
 
     {
 
-        return await _context.Meetings.ToListAsync();
+        var meetings = await _context.Meetings.Include("Attendees").ToListAsync();
+
+        var meetingsDto =  _mapper.Map<List<MeetingDto>>(meetings);
+
+        return Ok(meetingsDto);
 
         //.Include(m => m.Attendees)
 
@@ -86,9 +96,33 @@ public class MeetingsController : ControllerBase
 
             StartTime = addMeetingRequest.StartTime,
 
-            EndTime = addMeetingRequest.EndTime
+            EndTime = addMeetingRequest.EndTime,
 
+            Attendees = new List<Attendee>(),
         };
+
+        if (addMeetingRequest.Attendees != null && addMeetingRequest.Attendees.Any())
+        {
+            foreach (var email in addMeetingRequest.Attendees)
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+                if (user != null)
+                {
+                    // Add the attendee with userId to the meeting
+                    var attendee = new Attendee
+                    {
+                        UserId = user.Id,  // Add the userId here
+                    };
+                    meeting.Attendees.Add(attendee);
+                }
+                else
+                {
+                    // Optionally handle the case where the user is not found
+                    // For example, you could throw a BadRequest or simply skip this email
+                    ModelState.AddModelError("Attendees", $"User with email {email} not found.");
+                }
+            }
+        }
 
         // Add the meeting to the database
 
@@ -97,8 +131,9 @@ public class MeetingsController : ControllerBase
         await _context.SaveChangesAsync();
 
         // Return a 201 Created status with the newly created meeting
+        var meetingDto = _mapper.Map<MeetingDto>(meeting);
 
-        return CreatedAtAction(nameof(GetMeetings), new { id = meeting.Id }, meeting);
+        return CreatedAtAction(nameof(GetMeetings), new { id = meeting.Id }, meetingDto);
 
     }
 

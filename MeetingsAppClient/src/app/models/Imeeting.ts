@@ -1,22 +1,11 @@
-interface Attendee {
-  userId: string;
-  email: string;
-}
-
-interface Time {
-  hours: number;
-  minutes: number;
-}
-
 interface Meeting {
-  _id?: string;
+  id?: number; // Changed from _id to id to match the backend
   name: string;
   description: string;
   date: string; // ISO date string
-  startTime: Time;
-  endTime: Time;
-  attendees: Attendee[];
+  startTime: string; // Time is now represented as a string in "HH:mm" format
+  endTime: string; // Same for endTime
+  attendees: string[]; // Allow attendees to be null, matching the backend response
 }
 
-export type { Attendee, Time };
-export default Meeting; 
+export default Meeting;

@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <h2 class="mb-4">Meetings</h2>
   <hr />
-  
+
   <!-- Navigation Tabs -->
   <ul class="nav nav-tabs">
     <li class="nav-item">
@@ -66,19 +66,13 @@
         <div
           *ngFor="let meeting of filteredMeetings"
           class="border p-3 rounded mb-3">
-          <h6>
-            {{ meeting.date | date: 'fullDate' }}
-            {{ meeting.startTime.hours | number: '2.0' }}:
-            {{ meeting.startTime.minutes | number: '2.0' }} - 
-            {{ meeting.endTime.hours | number: '2.0' }}:
-            {{ meeting.endTime.minutes | number: '2.0' }}
-          </h6>
           <p class="mb-2"><strong>{{ meeting.name }}</strong></p>
           <p>{{ meeting.description }}</p>
+          <p><strong>Time:</strong> {{ meeting.startTime }} - {{ meeting.endTime }}</p>
+          <!-- <p><strong>Attendees:</strong> {{ getAttendeeEmails(meeting.attendees) }}</p> -->
           <button class="btn btn-danger btn-sm mb-2" (click)="excuseYourself(meeting)">
             Excuse yourself
           </button>
-          <p>Attendees: {{ getAttendeeEmails(meeting.attendees) }}</p>
 
           <!-- Add New Attendee Section -->
           <div class="mb-3">

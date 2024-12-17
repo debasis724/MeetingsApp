@@ -17,30 +17,16 @@
 
     <!-- Start Time -->
     <div class="mb-3">
-      <label class="form-label">Start Time (hh:mm)</label>
-      <div class="d-flex align-items-center">
-        <select class="form-select w-auto" formControlName="startTime.hours">
-          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
-        </select>
-        <span class="mx-2">:</span>
-        <select class="form-select w-auto" formControlName="startTime.minutes">
-          <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
-        </select>
-      </div>
+      <label for="startTime" class="form-label">Start Time (hh:mm)</label>
+      <input type="text" id="startTime" class="form-control time-input" formControlName="startTime" placeholder="00:00"
+             (input)="onTimeInput($event, 'startTime')" (focus)="onFocus($event, 'startTime')" (blur)="onBlur($event, 'startTime')" />
     </div>
 
     <!-- End Time -->
     <div class="mb-3">
-      <label class="form-label">End Time (hh:mm)</label>
-      <div class="d-flex align-items-center">
-        <select class="form-select w-auto" formControlName="endTime.hours">
-          <option *ngFor="let hour of hours" [value]="hour">{{ hour }}</option>
-        </select>
-        <span class="mx-2">:</span>
-        <select class="form-select w-auto" formControlName="endTime.minutes">
-          <option *ngFor="let minute of minutes" [value]="minute">{{ minute }}</option>
-        </select>
-      </div>
+      <label for="endTime" class="form-label">End Time (hh:mm)</label>
+      <input type="text" id="endTime" class="form-control time-input" formControlName="endTime" placeholder="00:00"
+             (input)="onTimeInput($event, 'endTime')" (focus)="onFocus($event, 'endTime')" (blur)="onBlur($event, 'endTime')" />
     </div>
 
     <!-- Description -->

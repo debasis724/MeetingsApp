@@ -8,7 +8,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 
 
-namespace meetings_app_server.Controllers
+namespace Meetings_App_Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

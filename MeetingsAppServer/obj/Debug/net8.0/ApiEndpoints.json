@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "meetings_app_server.Controllers.AttendeeController",
+    "ContainingType": "Meetings_App_Server.Controllers.AttendeeController",
     "Method": "AddAttendee",
     "RelativePath": "api/Attendee/Add",
     "HttpMethod": "POST",
@@ -16,7 +16,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "meetings_app_server.Controllers.AttendeeController",
+    "ContainingType": "Meetings_App_Server.Controllers.AttendeeController",
     "Method": "RemoveAttendee",
     "RelativePath": "api/Attendee/Remove",
     "HttpMethod": "DELETE",
@@ -32,7 +32,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "meetings_app_server.Controllers.AttendeeController",
+    "ContainingType": "Meetings_App_Server.Controllers.AttendeeController",
     "Method": "GetUsers",
     "RelativePath": "api/Attendee/users",
     "HttpMethod": "GET",

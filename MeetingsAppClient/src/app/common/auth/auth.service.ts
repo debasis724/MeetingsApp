@@ -6,14 +6,14 @@ import { map } from 'rxjs/operators';
 const apiUrl = 'https://localhost:7150';
 
 export interface ICredentials {
-  username: string,
-  password: string,
-  roles?: string[],
+  username: string;
+  password: string;
+  roles?: string[];
 }
 
 export interface ILoginResponse {
   email: string;
-  token: string;
+  authToken: string;
   role: 'Writer' | 'Reader';
 }
 
@@ -27,8 +27,10 @@ export class AuthenticationService {
   public currentUser: Observable<ILoginResponse | null>;
 
   constructor(private http: HttpClient) {
-    const user = JSON.parse(localStorage.getItem(AuthenticationService.KEY_USER) || '{}');
-    
+    const user = JSON.parse(
+      localStorage.getItem(AuthenticationService.KEY_USER) || '{}'
+    );
+
     // const email = JSON.parse(localStorage.getItem(AuthenticationService.KEY_USER) || '{}');
     // const email = localStorage.getItem('userEmail');
     this.currentUserSubject = new BehaviorSubject<ILoginResponse | null>(user);
@@ -42,9 +44,12 @@ export class AuthenticationService {
       })
       .pipe(
         map((resp) => {
-          if (resp && resp.token) {
+          if (resp && resp.authToken) {
             // Store user details and JWT token in local storage
-            localStorage.setItem(AuthenticationService.KEY_USER, JSON.stringify(resp));
+            localStorage.setItem(
+              AuthenticationService.KEY_USER,
+              JSON.stringify(resp)
+            );
             this.currentUserSubject.next(resp);
           }
           return resp;

@@ -22,10 +22,10 @@ export class JwtInterceptor implements HttpInterceptor {
     // add authorization header with jwt token if available
     let user = this.authenticationService.getUser();
 
-    if (user && user.token) {
+    if (user && user.authToken) {
       request = request.clone({
         setHeaders: {
-          Authorization: `${user.token}`,
+          Authorization: `${user.authToken}`,
         },
       });
     }
