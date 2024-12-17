@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-import {
-  ICredentials,
-} from '../common/auth/auth.service';
+import { ICredentials } from '../common/auth/auth.service';
 import { AuthenticationService } from '../common/auth/auth.service';
 
 @Component({
@@ -15,13 +13,13 @@ import { AuthenticationService } from '../common/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
   credentials: ICredentials = {
-    email: 'debasis@gmail.com',
+    username: 'vicky@gmail.com',
     password: 'Vicky@1234',
   };
   registerCredentials: ICredentials = {
-    name:'vicky',
-    email: 'vicky@gmail.com',
+    username: 'vicky@gmail.com',
     password: 'Vicky@1234',
+    roles: ['Writer'],
   };
   isRegisterMode = false; // Default to Login mode
   returnUrl!: string;
@@ -31,8 +29,8 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService
   ) {}
 
-  authData:ICredentials = {
-    email: '',
+  authData: ICredentials = {
+    username: '',
     password: '',
   };
 
@@ -44,8 +42,9 @@ export class LoginComponent implements OnInit {
     // if (this.authenticationService.isLoggedIn()) {
     //   this.router.navigate([this.returnUrl || '/']);
     // }
-    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/calendar';
-    this.activatedRoute.url.subscribe(url => {
+    this.returnUrl =
+      this.activatedRoute.snapshot.queryParams['returnUrl'] || '/calendar';
+    this.activatedRoute.url.subscribe((url) => {
       if (url[0].path === '' || url[0].path === 'login') {
         this.isRegisterMode = false;
       } else {
@@ -53,7 +52,6 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  
 
   onSubmit() {
     if (this.isRegisterMode) {
@@ -61,7 +59,7 @@ export class LoginComponent implements OnInit {
       console.log('Registered with:', this.registerCredentials);
       this.authenticationService.register(this.registerCredentials).subscribe({
         next: (data) => {
-          this.router.navigate(["/login"]);
+          this.router.navigate(['/login']);
         },
         error: (error) => {
           // this.toastService.show({

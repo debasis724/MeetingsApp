@@ -3,18 +3,18 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-const apiUrl = 'http://localhost:4000';
+const apiUrl = 'https://localhost:7150';
 
 export interface ICredentials {
-  name?:string,
-  email: string;
-  password: string;
+  username: string,
+  password: string,
+  roles?: string[],
 }
 
 export interface ILoginResponse {
   email: string;
   token: string;
-  role: 'admin' | 'general';
+  role: 'Writer' | 'Reader';
 }
 
 @Injectable({
@@ -37,7 +37,7 @@ export class AuthenticationService {
 
   login(credentials: ICredentials) {
     return this.http
-      .post<ILoginResponse>(`${apiUrl}/api/auth/login`, credentials, {
+      .post<ILoginResponse>(`${apiUrl}/api/Auth/Login`, credentials, {
         headers: { 'Content-Type': 'application/json' },
       })
       .pipe(
@@ -53,7 +53,7 @@ export class AuthenticationService {
   }
   register(credentials: ICredentials) {
     return this.http
-      .post(`${apiUrl}/api/auth/register`, credentials, {
+      .post(`${apiUrl}/api/Auth/Register`, credentials, {
         headers: { 'Content-Type': 'application/json' },
       })
       .pipe(
