@@ -30,6 +30,14 @@ export class MeetingsService {
     );
   }
 
+  addAttendee(attendeeData: { email: string, meetingId: number|undefined }): Observable<Imeeting> {
+    return this.http.post<Imeeting>(`${this.apiUrl}/api/Attendee/Add`, attendeeData, {
+      headers:{
+        'Content-Type': 'application/json' 
+      }
+    });
+  }
+
   getTeams(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/api/teams`);
   }

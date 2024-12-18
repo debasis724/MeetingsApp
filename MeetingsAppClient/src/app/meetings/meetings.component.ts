@@ -132,8 +132,23 @@ export class MeetingsComponent {
       alert('Please select an email from the dropdown!');
       return;
     }
-    this.selectedEmail = '';
-    this.filterMeetings();
+    const attendeeData = {
+      email: this.selectedEmail,
+      meetingId: meeting.id
+    }
+    // Call the service to add the attendee
+    this.meetingsService.addAttendee(attendeeData).subscribe(
+      (response) => {
+        console.log('Attendee added successfully:', response);
+        this.selectedEmail = ''; // Reset the selected email
+        meeting.attendees = response.attendees;
+        //meeting.attendees?.push({ meetingId: meeting.id, userId: response. });
+        this.filterMeetings(); // Re-filter meetings after adding attendee
+      },
+      (error) => {
+        console.error('Error adding attendee:', error);
+      }
+    );
   }
 
   loadAttendees(): void {

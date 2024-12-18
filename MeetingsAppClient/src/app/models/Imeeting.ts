@@ -10,7 +10,7 @@ interface Meeting {
 }
 
 interface UserAttendee {
-  meetingId:number;
+  meetingId:number | undefined;
   userId:string;
 }
 

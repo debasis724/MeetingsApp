@@ -39,6 +39,8 @@ public class JwtTokenRepository : ITokenRepository
 
         claims.Add(new Claim(ClaimTypes.Email, user.Email));
 
+        claims.Add(new Claim(JwtRegisteredClaimNames.Sub, user.Id));
+
         foreach (var role in roles)
 
         {
