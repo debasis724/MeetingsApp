@@ -78,7 +78,7 @@ export class AddMeetingComponent {
       startTime: ['', Validators.required],  // Start time as a string (hh:mm)
       endTime: ['', Validators.required],    // End time as a string (hh:mm)
       description: ['', Validators.required],
-      attendees: ['', [Validators.required]]  // Comma-separated email addresses
+      emails: ['', [Validators.required]]  // Comma-separated email addresses
     });
   }
 
@@ -96,7 +96,7 @@ export class AddMeetingComponent {
         date: formData.date,
         startTime: formData.startTime,  // Directly use the time string (hh:mm)
         endTime: formData.endTime,      // Directly use the time string (hh:mm)
-        attendees: this.parseAttendees(formData.attendees) // Only emails here
+        emails: this.parseAttendees(formData.emails) // Only emails here
       };
 
       // Emit the meeting data
@@ -106,8 +106,8 @@ export class AddMeetingComponent {
   }
 
   // Helper function to parse attendees string into an array of email strings
-  parseAttendees(attendees: string): string[] {
-    return attendees.split(',')
+  parseAttendees(emails: string): string[] {
+    return emails.split(',')
       .map(email => email.trim())
       .filter(email => email); // Remove any empty strings
   }

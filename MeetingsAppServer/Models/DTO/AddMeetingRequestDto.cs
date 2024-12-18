@@ -18,7 +18,8 @@ namespace Meetings_App_Server.Models.DTO
         public TimeOnly StartTime { get; set; }  // TimeOnly for start time
         [DataType(DataType.Time)]
         public TimeOnly EndTime { get; set; }  // TimeOnly for end time
-        public List<string> Attendees { get; set; }
+        public List<string> Emails { get; set; }
+
 
     }
 }

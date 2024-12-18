@@ -5,18 +5,12 @@
   <!-- Navigation Tabs -->
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a 
-        class="nav-link" 
-        [class.active]="currentTab === 'filter'" 
-        (click)="currentTab = 'filter'">
+      <a class="nav-link" [class.active]="currentTab === 'filter'" (click)="currentTab = 'filter'">
         Filter / Search Meetings
       </a>
     </li>
     <li class="nav-item">
-      <a 
-        class="nav-link" 
-        [class.active]="currentTab === 'add'" 
-        (click)="currentTab = 'add'">
+      <a class="nav-link" [class.active]="currentTab === 'add'" (click)="currentTab = 'add'">
         Add a Meeting
       </a>
     </li>
@@ -63,14 +57,17 @@
         <div *ngIf="filteredMeetings.length === 0" class="text-muted">
           No meetings found.
         </div>
-        <div
-          *ngFor="let meeting of filteredMeetings"
-          class="border p-3 rounded mb-3">
+        <div *ngFor="let meeting of filteredMeetings" class="border p-3 rounded mb-3">
           <p class="mb-2"><strong>{{ meeting.name }}</strong></p>
           <p>{{ meeting.description }}</p>
           <p><strong>Time:</strong> {{ meeting.startTime }} - {{ meeting.endTime }}</p>
-          <!-- <p><strong>Attendees:</strong> {{ getAttendeeEmails(meeting.attendees) }}</p> -->
-          <button class="btn btn-danger btn-sm mb-2" (click)="excuseYourself(meeting)">
+          <p><strong>Attendees:</strong>
+            <span *ngFor="let attendee of meeting.attendees">
+              {{ getAttendeeEmail(attendee.userId) }}
+            </span>
+          </p>
+
+          <button class="btn btn-danger btn-sm mb-2">
             Excuse yourself
           </button>
 
@@ -80,7 +77,7 @@
             <div class="d-flex">
               <select id="attendeeSelect" class="form-select w-auto" [(ngModel)]="selectedEmail">
                 <option value="" disabled selected>Select Member</option>
-                <option *ngFor="let email of exampleEmails" [value]="email">{{ email }}</option>
+                <option *ngFor="let user of UserData" [value]="user.email">{{ user.email }}</option>
               </select>
               <button class="btn btn-success btn-sm ms-2" (click)="addAttendee(meeting)">Add</button>
             </div>

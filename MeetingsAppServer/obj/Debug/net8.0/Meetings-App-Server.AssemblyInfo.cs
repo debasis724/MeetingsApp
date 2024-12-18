@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Meetings-App-Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47bdf2b6b896a692a4c5f711a7a5574e12b5c98e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08a72dcc20e032d3677e3d6bebfb6bd447c266bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Meetings-App-Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Meetings-App-Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

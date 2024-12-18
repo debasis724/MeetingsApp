@@ -16,6 +16,10 @@ export class MeetingsService {
     return this.http.get<Imeeting[]>(`${this.apiUrl}/api/Meetings`);
   }
 
+  getUsers():Observable<any[]> {
+     return this.http.get<any>(`${this.apiUrl}/api/Attendee/users`);
+  }
+
   addMeeting(meetingData: Omit<Imeeting, 'id'>): Observable<Imeeting> {
     return this.http.post<Imeeting>(
       `${this.apiUrl}/api/Meetings`, meetingData, {

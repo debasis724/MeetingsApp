@@ -84,6 +84,8 @@ public class MeetingsController : ControllerBase
 
         // Create the Meeting model based on the received DTO data
 
+        var Emails = addMeetingRequest.Emails;
+
         var meeting = new Meeting
 
         {
@@ -98,12 +100,12 @@ public class MeetingsController : ControllerBase
 
             EndTime = addMeetingRequest.EndTime,
 
-            Attendees = new List<Attendee>(),
+            Attendees = new List<Attendee>()
         };
 
-        if (addMeetingRequest.Attendees != null && addMeetingRequest.Attendees.Any())
+        if (addMeetingRequest.Emails != null && addMeetingRequest.Emails.Any())
         {
-            foreach (var email in addMeetingRequest.Attendees)
+            foreach (var email in addMeetingRequest.Emails)
             {
                 var user = await _userManager.FindByEmailAsync(email);
                 if (user != null)
