@@ -24,13 +24,13 @@
               <div *ngFor="let meeting of meetings" class="meeting-box p-2 border rounded" [style.background-color]="'#d4edda'">
                 <div class="meeting-title font-weight-bold">{{ meeting.name }}</div>
                 <div class="meeting-time">{{ meeting.startTime }} - {{ meeting.endTime }}</div>
-                <!-- <div class="meeting-attendees">Attendees: {{ meeting.attendees || 0 }} members</div> -->
               </div>
             </div>
           </ng-container>
+          <!-- Debugging info -->
+          <!-- <div *ngIf="getMeetingsForSlot(time).length === 0">No meetings for {{ time }}</div> -->
         </div>
       </div>
     </div>
   </div>
 </div>
-

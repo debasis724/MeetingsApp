@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|solutionrelative:controllers\\attendeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|c:\\users\\pradhan.debasis\\onedrive - ascendion\\desktop\\meetingsapp\\meetingsapp\\meetingsappserver\\models\\dto\\removeattendeerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|solutionrelative:models\\dto\\removeattendeerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|c:\\users\\pradhan.debasis\\onedrive - ascendion\\desktop\\meetingsapp\\meetingsapp\\meetingsappserver\\controllers\\meetingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|solutionrelative:controllers\\meetingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -59,10 +63,6 @@
       "RelativeMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|solutionrelative:migrations\\20241217080547_attendeeseeded.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|c:\\users\\pradhan.debasis\\onedrive - ascendion\\desktop\\meetingsapp\\meetingsapp\\meetingsappserver\\models\\dto\\removeattendeerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|solutionrelative:models\\dto\\removeattendeerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|c:\\users\\pradhan.debasis\\onedrive - ascendion\\desktop\\meetingsapp\\meetingsapp\\meetingsappserver\\models\\dto\\userwithmeetingsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99A0CBA5-60EC-4560-95E7-0CB37C1A3757}|Meetings-App-Server.csproj|solutionrelative:models\\dto\\userwithmeetingsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -86,37 +86,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "JwtTokenRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Repositories\\JwtTokenRepositories.cs",
-              "RelativeDocumentMoniker": "Repositories\\JwtTokenRepositories.cs",
-              "ToolTip": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Repositories\\JwtTokenRepositories.cs",
-              "RelativeToolTip": "Repositories\\JwtTokenRepositories.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAcwEoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-18T08:06:04.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "MeetingsController.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Controllers\\MeetingsController.cs",
               "RelativeDocumentMoniker": "Controllers\\MeetingsController.cs",
               "ToolTip": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Controllers\\MeetingsController.cs",
               "RelativeToolTip": "Controllers\\MeetingsController.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAAAIcAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAwwP0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T05:58:20.491Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -134,14 +121,14 @@
               "RelativeDocumentMoniker": "Controllers\\AttendeeController.cs",
               "ToolTip": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Controllers\\AttendeeController.cs",
               "RelativeToolTip": "Controllers\\AttendeeController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwG8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAkwIoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-17T07:54:46.117Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AddMeetingRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\DTO\\AddMeetingRequestDto.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\AddMeetingRequestDto.cs",
@@ -153,7 +140,32 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RemoveAttendeeRequest.cs",
+              "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\DTO\\RemoveAttendeeRequest.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\RemoveAttendeeRequest.cs",
+              "ToolTip": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\DTO\\RemoveAttendeeRequest.cs",
+              "RelativeToolTip": "Models\\DTO\\RemoveAttendeeRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T08:02:25.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "JwtTokenRepositories.cs",
+              "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Repositories\\JwtTokenRepositories.cs",
+              "RelativeDocumentMoniker": "Repositories\\JwtTokenRepositories.cs",
+              "ToolTip": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Repositories\\JwtTokenRepositories.cs",
+              "RelativeToolTip": "Repositories\\JwtTokenRepositories.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAcwEoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T08:06:04.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AddAttendeeRequest.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\DTO\\AddAttendeeRequest.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\AddAttendeeRequest.cs",
@@ -161,12 +173,11 @@
               "RelativeToolTip": "Models\\DTO\\AddAttendeeRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T08:01:31.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-17T08:01:31.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "AutoMapperProfiles.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Mappings\\AutoMapperProfiles.cs",
               "RelativeDocumentMoniker": "Mappings\\AutoMapperProfiles.cs",
@@ -178,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Attendee.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\Domains\\Attendee.cs",
               "RelativeDocumentMoniker": "Models\\Domains\\Attendee.cs",
@@ -190,7 +201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "MeetingDto.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\DTO\\MeetingDto.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\MeetingDto.cs",
@@ -202,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Meeting.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\Domains\\Meeting.cs",
               "RelativeDocumentMoniker": "Models\\Domains\\Meeting.cs",
@@ -214,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -226,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "Controllers\\WeatherForecastController.cs",
@@ -238,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -251,18 +262,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "RemoveAttendeeRequest.cs",
-              "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\DTO\\RemoveAttendeeRequest.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\RemoveAttendeeRequest.cs",
-              "ToolTip": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Models\\DTO\\RemoveAttendeeRequest.cs",
-              "RelativeToolTip": "Models\\DTO\\RemoveAttendeeRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T08:02:25.466Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
               "Title": "20241217080547_AttendeeSeeded.cs",
               "DocumentMoniker": "C:\\Users\\pradhan.debasis\\OneDrive - ascendion\\Desktop\\MeetingsApp\\MeetingsApp\\MeetingsAppServer\\Migrations\\20241217080547_AttendeeSeeded.cs",
               "RelativeDocumentMoniker": "Migrations\\20241217080547_AttendeeSeeded.cs",

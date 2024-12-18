@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     password: 'Vicky@1234',
   };
   registerCredentials: ICredentials = {
-    username: 'vicky@gmail.com',
+    username: 'hello@gmail.com',
     password: 'Vicky@1234',
     roles: ['Writer'],
   };

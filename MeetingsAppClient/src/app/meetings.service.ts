@@ -38,6 +38,16 @@ export class MeetingsService {
     });
   }
 
+  removeAttendee(meetingId:{meetingId:number|undefined}): Observable<void> {
+    console.log(meetingId);
+    return this.http.delete<void>(`${this.apiUrl}/api/Attendee/Remove`,{
+      headers:{
+        'Content-Type': 'application/json' 
+      },
+      body: meetingId
+    });
+  }
+
   getTeams(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/api/teams`);
   }

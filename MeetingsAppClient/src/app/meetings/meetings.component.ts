@@ -122,8 +122,22 @@ export class MeetingsComponent {
 
   // Function to handle "Excuse yourself" button click
   excuseYourself(meeting: Imeeting) {
-    console.log(`Excused from meeting: ${meeting.name}`);
-    this.filterMeetings();
+    const id = {
+      meetingId: meeting.id,
+    }
+    this.meetingsService.removeAttendee(id).subscribe(
+      (response) => {
+        console.log('You have been excused from the meeting:', meeting.name);
+        // // Remove the meeting from the current meetings list (or update the list)
+        // this.meetings = this.meetings.filter(m => m.id !== meeting.id);
+        this.meetings = this.meetings.filter(m => m.id !== meeting.id);
+        this.filterMeetings(); // Re-filter meetings
+      },
+      (error) => {
+        console.error('Error removing attendee:', error);
+        alert('An error occurred while excusing yourself from the meeting.');
+      }
+    );
   }
 
   // Function to handle adding a new attendee to the meeting
